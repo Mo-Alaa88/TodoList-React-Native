@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Header from './cmponents/header.js';
 import TodoItem from './cmponents/todoItem.js';
 import AddTodo from './cmponents/addTodo.js';
@@ -34,25 +34,31 @@ export default function App() {
     }
   }
   return (
-    <View style={styles.container}>
-      {/* to header */}
-      <Header/>
-      <View style={styles.content}>
-        {/* to form */}
-        <AddTodo submitHandler={submitHandler}/>
-        {/* to todo */}
-        <View style={styles.list}>
-          <FlatList
-          // numColumns={2}
-          data={todos}
-          renderItem={({item})=>(
-            <TodoItem item={item} pressHandler={pressHandler}/>
-          )}
-          />
+    <TouchableWithoutFeedback
+    onPress={()=>{
+      Keyboard.dismiss();
+    }}
+    >
+      <View style={styles.container}>
+        {/* to header */}
+        <Header/>
+        <View style={styles.content}>
+          {/* to form */}
+          <AddTodo submitHandler={submitHandler}/>
+          {/* to todo */}
+          <View style={styles.list}>
+            <FlatList
+            // numColumns={2}
+            data={todos}
+            renderItem={({item})=>(
+              <TodoItem item={item} pressHandler={pressHandler}/>
+              )}
+              />
+          </View>
         </View>
-      </View>
 
-    </View>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
