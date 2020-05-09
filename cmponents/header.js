@@ -10,19 +10,23 @@ export default function Header(){
 }
 const styles = StyleSheet.create({
     header:{
+        alignSelf: 'flex-start',
         height:100,
         marginTop: 200,
         paddingTop: 38,
-        width:500,
+        // width:500,
         backgroundColor:'coral',
         // color:'white',
-        // fontS ize: "xx-larg",
+        // resizeMode: 'stretch',
+        flex:3,
     },
     title:{
         textAlign:'center',
         color:'#fff',
         fontSize:20,
         fontWeight:'bold',
+        // flex:1,
+
     },
 
 });

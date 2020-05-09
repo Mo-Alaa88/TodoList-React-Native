@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyb
 import Header from './cmponents/header.js';
 import TodoItem from './cmponents/todoItem.js';
 import AddTodo from './cmponents/addTodo.js';
+import Registration from './cmponents/registration.js';
 
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
     }
   }
   return (
+    // <Registration/>
     <TouchableWithoutFeedback
     onPress={()=>{
       Keyboard.dismiss();
